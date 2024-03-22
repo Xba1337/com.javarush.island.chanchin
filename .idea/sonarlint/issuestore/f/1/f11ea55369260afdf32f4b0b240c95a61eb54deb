@@ -1,0 +1,12 @@
+
+[
+java:S5993"9Change the visibility of this constructor to "protected".(ÓŒÂ–ûÿÿÿÿ8â¯ü¸æ1
+R
+java:S1481"0Remove this unused "victimPairs" local variable.(Èı¹¼úÿÿÿÿ8é¯ü¸æ1
+K
+java:S1940")Use the opposite operator ("!=") instead.(‘Çò×ùÿÿÿÿ8ê¯ü¸æ1
+J	java:S108")Either remove or fill this block of code.(‘Çò×ùÿÿÿÿ8ê¯ü¸æ1
+_
+java:S1128"BRemove this unused import 'world.animals.herbivorous.Caterpillar'.(À–Ÿ8µî¹æ1
+U
+java:S1068"8Remove this unused "currentStomachVolume" private field.(Îø™Û8ë¯ü¸æ1

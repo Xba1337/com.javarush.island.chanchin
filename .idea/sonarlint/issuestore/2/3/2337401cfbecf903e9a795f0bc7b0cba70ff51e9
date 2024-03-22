@@ -1,0 +1,45 @@
+
+\
+java:S1118":Add a private constructor to hide the implicit public one.(“³±ûÿÿÿÿ8¥”¸æ1
+K
+java:S2386:".Make member "STRINGS_FOR_ANIMALS" "protected".(Ó€Ì8 ¥”¸æ1
+O
+java:S2386L"-Make member "STRINGS_FOR_PLANTS" "protected".(‰ÌÑùÿÿÿÿ8£¥”¸æ1
+H
+java:S2386S"+Make member "BASE_FOR_ANIMALS" "protected".(ˆŠÏ¤8¤¥”¸æ1
+L
+java:S2386d"*Make member "BASE_FOR_PLANTS" "protected".(éõ’ÿÿÿÿÿ8¦¥”¸æ1
+<
+java:S2386i" Make member "TYPES" "protected".(ƒö€C8§¥”¸æ1
+P
+java:S2386}".Make member "WOLF_CHANCES_TO_EAT" "protected".(á ÕÚùÿÿÿÿ8¨¥”¸æ1
+R
+java:S2386"/Make member "SNAKE_CHANCES_TO_EAT" "protected".(˜‘•íûÿÿÿÿ8ª¥”¸æ1
+P
+java:S2386£"-Make member "FOX_CHANCES_TO_EAT" "protected".(ıôˆßüÿÿÿÿ8¬¥”¸æ1
+L
+java:S2386¶".Make member "BEAR_CHANCES_TO_EAT" "protected".(•°èó8®¥”¸æ1
+M
+java:S2386É"/Make member "EAGLE_CHANCES_TO_EAT" "protected".(ãŞ¼û8°¥”¸æ1
+R
+java:S2386Ü"/Make member "HORSE_CHANCES_TO_EAT" "protected".(Ó‘á×ıÿÿÿÿ8Æ¥”¸æ1
+L
+java:S2386ï".Make member "DEER_CHANCES_TO_EAT" "protected".(ãë½˜8È¥”¸æ1
+K
+java:S2386‚".Make member "HARE_CHANCES_TO_EAT" "protected".(ôş—8Ê¥”¸æ1
+R
+java:S2386•"/Make member "MOUSE_CHANCES_TO_EAT" "protected".(«­•”ıÿÿÿÿ8Ë¥”¸æ1
+Q
+java:S2386¨".Make member "GOAT_CHANCES_TO_EAT" "protected".(¯şÑ±üÿÿÿÿ8Í¥”¸æ1
+M
+java:S2386»"/Make member "SHEEP_CHANCES_TO_EAT" "protected".(¶àèÕ8Ï¥”¸æ1
+Q
+java:S2386Î".Make member "BOAR_CHANCES_TO_EAT" "protected".(­÷è™øÿÿÿÿ8Ğ¥”¸æ1
+Q
+java:S2386á".Make member "BULL_CHANCES_TO_EAT" "protected".(¸åÍüÿÿÿÿ8Ò¥”¸æ1
+L
+java:S2386ô".Make member "DUCK_CHANCES_TO_EAT" "protected".(·ï´ú8Ô¥”¸æ1
+S
+java:S2386‡"5Make member "CATERPILLAR_CHANCES_TO_EAT" "protected".(ûå½”8Õ¥”¸æ1
+M
+java:S2386š"/Make member "CONTAINER_OF_CHANCES" "protected".(½—Ş8×¥”¸æ1
