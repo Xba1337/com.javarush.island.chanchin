@@ -1,7 +1,3 @@
-package com.javarush.island.chanchin;
-
-
-
 import world.map.Cell;
 import world.map.WorldCreator;
 
