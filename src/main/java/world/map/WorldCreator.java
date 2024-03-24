@@ -1,27 +1,37 @@
 package world.map;
 
+import lombok.SneakyThrows;
 import resources.configs.util.Randomizer;
 import world.animals.Animal;
-import world.animals.herbivorous.Boar;
-import world.animals.predators.Wolf;
+import world.animals.herbivorous.*;
+import world.animals.predators.*;
 import world.constants.Constants;
 import world.plants.Grass;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
+import java.util.Iterator;
+
 
 public class WorldCreator {
-
-    private final WorldMap worldMap;
 
     private int worldSizeX;
     private int worldSizeY;
 
+    public final WorldMap worldMap;
+
     public WorldCreator(int worldSizeX, int worldSizeY) {
         this.worldSizeX = worldSizeX;
         this.worldSizeY = worldSizeY;
-        this.worldMap = new WorldMap(worldSizeX, worldSizeY);
+        worldMap = new WorldMap(worldSizeX, worldSizeY);
         generateCells();
+        for (int i = 0; i < getWorldSizeY(); i++) {
+            for (int j = 0; j < getWorldSizeX(); j++) {
+                Cell cell1 = WorldMap.getCell(j, i);
+
+                cell1.getContainedPlants().get(Grass.class).multiply(cell1);
+            }
+
+        }
 
 
     }
@@ -45,30 +55,23 @@ public class WorldCreator {
                     cells[x][y].getContainedAnimals()
                                .put(type, generateOrganisms(type));
                     cells[x][y].getContainedPlants()
-                               .add(generatePlant());
+                               .put(Grass.class, generatePlant());
                 }
 
             }
         }
     }
 
+    @SneakyThrows
     private Animal generateOrganisms(Class<? extends Animal> type) {
         Animal animal = null;
 
         int randomNumOfAnimals = Randomizer.getRandom(0, (int) Constants.BASE_FOR_ANIMALS.get(type)[1]);
         for (int i = 0; i < randomNumOfAnimals; i++) {
-            try {
-                Constructor<? extends Animal> animalConstructor = type.getDeclaredConstructor();
-                animal = animalConstructor.newInstance();
-            } catch (InstantiationException e) {
-                throw new RuntimeException(e);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
-            } catch (NoSuchMethodException e) {
-                throw new RuntimeException(e);
-            }
+
+            Constructor<? extends Animal> animalConstructor = type.getDeclaredConstructor();
+            animal = animalConstructor.newInstance();
+
         }
 
         return animal;
@@ -78,11 +81,7 @@ public class WorldCreator {
         Grass plant = null;
         int randomNumberOfAnimals = Randomizer.getRandom(0, (int) Constants.BASE_FOR_PLANTS.get(Grass.class)[1]);
         for (int i = 0; i < randomNumberOfAnimals; i++) {
-            String paramName = Constants.STRINGS_FOR_PLANTS.get(Grass.class)[0];
-            String paramIcon = Constants.STRINGS_FOR_PLANTS.get(Grass.class)[1];
-            double paramWeight = Constants.BASE_FOR_PLANTS.get(Grass.class)[0];
-            double paramMaxNumberInCell = Constants.BASE_FOR_PLANTS.get(Grass.class)[1];
-            plant = new Grass(paramName, paramIcon, paramWeight, paramMaxNumberInCell);
+            plant = new Grass();
         }
         return plant;
     }

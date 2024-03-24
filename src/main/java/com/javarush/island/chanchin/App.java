@@ -10,7 +10,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        WorldCreator worldCreator = new WorldCreator(2, 2);
+        WorldCreator worldCreator = new WorldCreator(10, 10);
 
 
 

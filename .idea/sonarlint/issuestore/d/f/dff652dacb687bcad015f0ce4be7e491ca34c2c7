@@ -1,3 +1,5 @@
 
-N
-java:S1128"1Remove this unused import 'world.animals.Animal'.(©¥ Î8°®î¹æ1
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(ø—™¾8£çÁ†ç1
+G	java:S106'"+Replace this use of System.out by a logger.(ì„Á·8œîÑˆç1
+G	java:S106;"+Replace this use of System.out by a logger.( æ¥ï8à Òˆç1

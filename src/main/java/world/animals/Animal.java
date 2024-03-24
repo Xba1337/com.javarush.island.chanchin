@@ -4,13 +4,15 @@ import lombok.ToString;
 import world.Eatable;
 import world.constants.Constants;
 import world.map.Cell;
-import world.plants.Grass;
 
-@ToString
-public abstract class Animal implements Eatable {
+import java.lang.reflect.Constructor;
+import java.util.Objects;
+
+
+public abstract class Animal implements Eatable, Cloneable{
 
     private double currentStomachVolume;
-    private Class<? extends Animal> animal;
+    protected Class<? extends Animal> animal;
 
     public Animal() {
         this.animal = getClass();
@@ -19,9 +21,10 @@ public abstract class Animal implements Eatable {
 
     public abstract void eat(Cell cell);
 
-    public abstract void multiply();
-    public abstract void move();
-    public abstract void die();
+    public abstract void multiply(Cell cell);
+    public abstract void move(Cell cell);
+    public abstract void healthCheck(Cell cell);
+    public abstract void die(Animal animal, Cell cell);
 
     public double getCurrentStomachVolume() {
         return currentStomachVolume;
@@ -31,5 +34,15 @@ public abstract class Animal implements Eatable {
         this.currentStomachVolume = currentStomachVolume;
     }
 
+
+    @Override
+    public Animal clone() {
+        try {
+            Animal clone = (Animal) super.clone();
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 
 }

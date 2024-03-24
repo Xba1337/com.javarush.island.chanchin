@@ -10,9 +10,18 @@ public class Randomizer {
     }
 
     public static boolean getRandom(int chance){
-        int roll = ThreadLocalRandom.current()
-                                      .nextInt(0, 100);
+        int roll = ThreadLocalRandom.current().nextInt(0, 100);
 
-        return roll <= chance;
+
+        return roll < chance;
+    }
+
+    public static boolean getRandom(){
+        return ThreadLocalRandom.current()
+                                .nextBoolean();
+    }
+
+    public static int getDeciRandom(int from, int to){
+        return ThreadLocalRandom.current().nextInt(from, to) * 10;
     }
 }

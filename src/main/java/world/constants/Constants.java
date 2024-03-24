@@ -13,7 +13,9 @@ import java.util.Set;
 
 public class Constants {
 
-    public static final Map<Class<? extends Eatable>, Map<Class<? extends Eatable>, Integer>> CONTAINER_OF_CHANCES;
+    public static int WORLD_SIZE_X = 10;
+    public static int WORLD_SIZE_Y = 10;
+    public static final Map<Class<? extends Animal>, Map<Class<? extends Eatable>, Integer>> CONTAINER_OF_CHANCES;
     public static final Map<Class<? extends Eatable>, Integer> WOLF_CHANCES_TO_EAT;
 
     public static final Map<Class<? extends Eatable>, Integer> SNAKE_CHANCES_TO_EAT;
@@ -103,6 +105,7 @@ public class Constants {
 
     static {
         TYPES = new HashSet<>();
+
         TYPES.add(Boar.class);
         TYPES.add(Bull.class);
         TYPES.add(Caterpillar.class);
@@ -123,6 +126,7 @@ public class Constants {
 
     static {
         WOLF_CHANCES_TO_EAT = new HashMap<>();
+
         WOLF_CHANCES_TO_EAT.put(Snake.class, 0);
         WOLF_CHANCES_TO_EAT.put(Fox.class, 0);
         WOLF_CHANCES_TO_EAT.put(Bear.class, 0);
@@ -142,6 +146,7 @@ public class Constants {
 
     static {
         SNAKE_CHANCES_TO_EAT = new HashMap<>();
+
         SNAKE_CHANCES_TO_EAT.put(Wolf.class, 0);
         SNAKE_CHANCES_TO_EAT.put(Fox.class, 15);
         SNAKE_CHANCES_TO_EAT.put(Bear.class, 0);
@@ -161,6 +166,7 @@ public class Constants {
 
     static {
         FOX_CHANCES_TO_EAT = new HashMap<>();
+
         FOX_CHANCES_TO_EAT.put(Wolf.class, 0);
         FOX_CHANCES_TO_EAT.put(Snake.class, 0);
         FOX_CHANCES_TO_EAT.put(Bear.class, 0);
@@ -180,6 +186,7 @@ public class Constants {
 
     static {
         BEAR_CHANCES_TO_EAT = new HashMap<>();
+
         BEAR_CHANCES_TO_EAT.put(Wolf.class, 0);
         BEAR_CHANCES_TO_EAT.put(Snake.class, 80);
         BEAR_CHANCES_TO_EAT.put(Fox.class, 0);
@@ -199,6 +206,7 @@ public class Constants {
 
     static {
         EAGLE_CHANCES_TO_EAT = new HashMap<>();
+
         EAGLE_CHANCES_TO_EAT.put(Wolf.class, 0);
         EAGLE_CHANCES_TO_EAT.put(Snake.class, 0);
         EAGLE_CHANCES_TO_EAT.put(Fox.class, 10);
@@ -218,6 +226,7 @@ public class Constants {
 
     static {
         HORSE_CHANCES_TO_EAT = new HashMap<>();
+
         HORSE_CHANCES_TO_EAT.put(Wolf.class, 0);
         HORSE_CHANCES_TO_EAT.put(Snake.class, 0);
         HORSE_CHANCES_TO_EAT.put(Fox.class, 0);
@@ -237,6 +246,7 @@ public class Constants {
 
     static {
         DEER_CHANCES_TO_EAT = new HashMap<>();
+
         DEER_CHANCES_TO_EAT.put(Wolf.class, 0);
         DEER_CHANCES_TO_EAT.put(Snake.class, 0);
         DEER_CHANCES_TO_EAT.put(Fox.class, 0);
@@ -256,6 +266,7 @@ public class Constants {
 
     static {
         HARE_CHANCES_TO_EAT = new HashMap<>();
+
         HARE_CHANCES_TO_EAT.put(Wolf.class, 0);
         HARE_CHANCES_TO_EAT.put(Snake.class, 0);
         HARE_CHANCES_TO_EAT.put(Fox.class, 0);
@@ -275,6 +286,7 @@ public class Constants {
 
     static {
         MOUSE_CHANCES_TO_EAT = new HashMap<>();
+
         MOUSE_CHANCES_TO_EAT.put(Wolf.class, 0);
         MOUSE_CHANCES_TO_EAT.put(Snake.class, 0);
         MOUSE_CHANCES_TO_EAT.put(Fox.class, 0);
@@ -294,6 +306,7 @@ public class Constants {
 
     static {
         GOAT_CHANCES_TO_EAT = new HashMap<>();
+
         GOAT_CHANCES_TO_EAT.put(Wolf.class, 0);
         GOAT_CHANCES_TO_EAT.put(Snake.class, 0);
         GOAT_CHANCES_TO_EAT.put(Fox.class, 0);
@@ -313,6 +326,7 @@ public class Constants {
 
     static {
         SHEEP_CHANCES_TO_EAT = new HashMap<>();
+
         SHEEP_CHANCES_TO_EAT.put(Wolf.class, 0);
         SHEEP_CHANCES_TO_EAT.put(Snake.class, 0);
         SHEEP_CHANCES_TO_EAT.put(Fox.class, 0);
@@ -332,6 +346,7 @@ public class Constants {
 
     static {
         BOAR_CHANCES_TO_EAT = new HashMap<>();
+
         BOAR_CHANCES_TO_EAT.put(Wolf.class, 0);
         BOAR_CHANCES_TO_EAT.put(Snake.class, 0);
         BOAR_CHANCES_TO_EAT.put(Fox.class, 0);
@@ -345,12 +360,13 @@ public class Constants {
         BOAR_CHANCES_TO_EAT.put(Sheep.class, 0);
         BOAR_CHANCES_TO_EAT.put(Bull.class, 0);
         BOAR_CHANCES_TO_EAT.put(Duck.class, 0);
-        BOAR_CHANCES_TO_EAT.put(Caterpillar.class, 0);
+        BOAR_CHANCES_TO_EAT.put(Caterpillar.class, 90);
         BOAR_CHANCES_TO_EAT.put(Grass.class, 100);
     }
 
     static {
         BULL_CHANCES_TO_EAT = new HashMap<>();
+
         BULL_CHANCES_TO_EAT.put(Wolf.class, 0);
         BULL_CHANCES_TO_EAT.put(Snake.class, 0);
         BULL_CHANCES_TO_EAT.put(Fox.class, 0);
@@ -370,6 +386,7 @@ public class Constants {
 
     static {
         DUCK_CHANCES_TO_EAT = new HashMap<>();
+
         DUCK_CHANCES_TO_EAT.put(Wolf.class, 0);
         DUCK_CHANCES_TO_EAT.put(Snake.class, 0);
         DUCK_CHANCES_TO_EAT.put(Fox.class, 0);
@@ -389,6 +406,7 @@ public class Constants {
 
     static {
         CATERPILLAR_CHANCES_TO_EAT = new HashMap<>();
+
         CATERPILLAR_CHANCES_TO_EAT.put(Wolf.class, 0);
         CATERPILLAR_CHANCES_TO_EAT.put(Snake.class, 0);
         CATERPILLAR_CHANCES_TO_EAT.put(Fox.class, 0);

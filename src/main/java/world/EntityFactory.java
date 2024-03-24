@@ -1,7 +1,5 @@
 package world;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import world.animals.herbivorous.*;
 import world.animals.predators.*;
 import world.plants.Grass;

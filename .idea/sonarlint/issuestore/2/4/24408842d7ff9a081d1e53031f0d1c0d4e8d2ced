@@ -1,11 +1,16 @@
 
-
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ø—™¾8º…ö‘æ1
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(®Â×Øÿÿÿÿÿ8º…ö‘æ1
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(œ€Íùÿÿÿÿ8º…ö‘æ1
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(´õÁ¬şÿÿÿÿ8»…ö‘æ1
-U
-java:S1068"8Remove this unused "currentStomachVolume" private field.(Îø™Û8ªÖÌ¶æ1
+L
+java:S1066F"/Merge this if statement with the enclosing one.(½Ğşç8ÕÙÁ‰ç1
+I
+java:S2387","animal" is the name of a field in "Animal".(¼†ãı8‡û¸‰ç1
+G	java:S106'"+Replace this use of System.out by a logger.(ì„Á·8Œû¸‰ç1
+G	java:S106G"+Replace this use of System.out by a logger.(Ë¶Äæ8•û¸‰ç1
+L	java:S106s"+Replace this use of System.out by a logger.(¯Ñ…ùÿÿÿÿ8–û¸‰ç1
+L	java:S106t"+Replace this use of System.out by a logger.(òû“Œüÿÿÿÿ8—û¸‰ç1
+G	java:S106|"+Replace this use of System.out by a logger.(ÕÌ†Ó8˜û¸‰ç1
+G	java:S106~"+Replace this use of System.out by a logger.(Šˆ³8šû¸‰ç1
+H	java:S106"+Replace this use of System.out by a logger.(ºë8ÀÚÁ‰ç1
+X
+java:S1161–":Add the "@Override" annotation above this method signature(Íƒâ´8šû¸‰ç1
+G
+java:S1128"*Remove this unused import 'world.Eatable'.(¢â Ê8ÿ„÷‰ç1

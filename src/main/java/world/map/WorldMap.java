@@ -2,17 +2,17 @@ package world.map;
 
 public class WorldMap {
 
-    private final Cell[][] cells;
+    private static Cell[][] cells;
 
     public WorldMap(int x, int y){
-        this.cells = new Cell[x][y];
+        cells = new Cell[x][y];
     }
 
     public Cell[][] getCells() {
-        return this.cells;
+        return cells;
     }
 
-    public Cell getCell(int currentX, int currentY){
+    public static Cell getCell(int currentX, int currentY){
         return cells[currentX][currentY];
     }
 }

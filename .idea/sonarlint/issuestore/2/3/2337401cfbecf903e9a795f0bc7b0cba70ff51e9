@@ -1,45 +1,57 @@
 
-\
-java:S1118":Add a private constructor to hide the implicit public one.(“³±ûÿÿÿÿ8¥”¸æ1
-K
-java:S2386:".Make member "STRINGS_FOR_ANIMALS" "protected".(Ó€Ì8 ¥”¸æ1
+z
+java:S1104"XMake WORLD_SIZE_X a static final constant or non-public and provide accessors if needed.(²¼™Õúÿÿÿÿ8©ãıûæ1
+u
+java:S1104"XMake WORLD_SIZE_Y a static final constant or non-public and provide accessors if needed.(ßÜÉ„8È£şûæ1
+T
+java:S1444"2Make this "public static WORLD_SIZE_X" field final(²¼™Õúÿÿÿÿ8ªãıûæ1
 O
-java:S2386L"-Make member "STRINGS_FOR_PLANTS" "protected".(‰ÌÑùÿÿÿÿ8£¥”¸æ1
-H
-java:S2386S"+Make member "BASE_FOR_ANIMALS" "protected".(ˆŠÏ¤8¤¥”¸æ1
-L
-java:S2386d"*Make member "BASE_FOR_PLANTS" "protected".(éõ’ÿÿÿÿÿ8¦¥”¸æ1
-<
-java:S2386i" Make member "TYPES" "protected".(ƒö€C8§¥”¸æ1
-P
-java:S2386}".Make member "WOLF_CHANCES_TO_EAT" "protected".(á ÕÚùÿÿÿÿ8¨¥”¸æ1
-R
-java:S2386"/Make member "SNAKE_CHANCES_TO_EAT" "protected".(˜‘•íûÿÿÿÿ8ª¥”¸æ1
-P
-java:S2386£"-Make member "FOX_CHANCES_TO_EAT" "protected".(ıôˆßüÿÿÿÿ8¬¥”¸æ1
-L
-java:S2386¶".Make member "BEAR_CHANCES_TO_EAT" "protected".(•°èó8®¥”¸æ1
-M
-java:S2386É"/Make member "EAGLE_CHANCES_TO_EAT" "protected".(ãŞ¼û8°¥”¸æ1
-R
-java:S2386Ü"/Make member "HORSE_CHANCES_TO_EAT" "protected".(Ó‘á×ıÿÿÿÿ8Æ¥”¸æ1
-L
-java:S2386ï".Make member "DEER_CHANCES_TO_EAT" "protected".(ãë½˜8È¥”¸æ1
+java:S1444"2Make this "public static WORLD_SIZE_Y" field final(ßÜÉ„8É£şûæ1
+y
+java:S3008"WRename this field "WORLD_SIZE_X" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²¼™Õúÿÿÿÿ8±ãıûæ1
+t
+java:S3008"WRename this field "WORLD_SIZE_Y" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßÜÉ„8Ğ£şûæ1
+\
+java:S1118":Add a private constructor to hide the implicit public one.(“³±ûÿÿÿÿ8µãıûæ1
 K
-java:S2386‚".Make member "HARE_CHANCES_TO_EAT" "protected".(ôş—8Ê¥”¸æ1
-R
-java:S2386•"/Make member "MOUSE_CHANCES_TO_EAT" "protected".(«­•”ıÿÿÿÿ8Ë¥”¸æ1
-Q
-java:S2386¨".Make member "GOAT_CHANCES_TO_EAT" "protected".(¯şÑ±üÿÿÿÿ8Í¥”¸æ1
-M
-java:S2386»"/Make member "SHEEP_CHANCES_TO_EAT" "protected".(¶àèÕ8Ï¥”¸æ1
-Q
-java:S2386Î".Make member "BOAR_CHANCES_TO_EAT" "protected".(­÷è™øÿÿÿÿ8Ğ¥”¸æ1
-Q
-java:S2386á".Make member "BULL_CHANCES_TO_EAT" "protected".(¸åÍüÿÿÿÿ8Ò¥”¸æ1
+java:S2386<".Make member "STRINGS_FOR_ANIMALS" "protected".(Ó€Ì8¸ãıûæ1
+O
+java:S2386N"-Make member "STRINGS_FOR_PLANTS" "protected".(‰ÌÑùÿÿÿÿ8¼ãıûæ1
+H
+java:S2386U"+Make member "BASE_FOR_ANIMALS" "protected".(ˆŠÏ¤8½ãıûæ1
 L
-java:S2386ô".Make member "DUCK_CHANCES_TO_EAT" "protected".(·ï´ú8Ô¥”¸æ1
-S
-java:S2386‡"5Make member "CATERPILLAR_CHANCES_TO_EAT" "protected".(ûå½”8Õ¥”¸æ1
+java:S2386f"*Make member "BASE_FOR_PLANTS" "protected".(éõ’ÿÿÿÿÿ8Àãıûæ1
+<
+java:S2386k" Make member "TYPES" "protected".(ƒö€C8Àãıûæ1
+Q
+java:S2386€".Make member "WOLF_CHANCES_TO_EAT" "protected".(á ÕÚùÿÿÿÿ8Âãıûæ1
+R
+java:S2386”"/Make member "SNAKE_CHANCES_TO_EAT" "protected".(˜‘•íûÿÿÿÿ8Åãıûæ1
+P
+java:S2386¨"-Make member "FOX_CHANCES_TO_EAT" "protected".(ıôˆßüÿÿÿÿ8Æãıûæ1
+L
+java:S2386¼".Make member "BEAR_CHANCES_TO_EAT" "protected".(•°èó8Èãıûæ1
 M
-java:S2386š"/Make member "CONTAINER_OF_CHANCES" "protected".(½—Ş8×¥”¸æ1
+java:S2386Ğ"/Make member "EAGLE_CHANCES_TO_EAT" "protected".(ãŞ¼û8Ëãıûæ1
+R
+java:S2386ä"/Make member "HORSE_CHANCES_TO_EAT" "protected".(Ó‘á×ıÿÿÿÿ8Ìãıûæ1
+L
+java:S2386ø".Make member "DEER_CHANCES_TO_EAT" "protected".(ãë½˜8Îãıûæ1
+K
+java:S2386Œ".Make member "HARE_CHANCES_TO_EAT" "protected".(ôş—8Ğãıûæ1
+R
+java:S2386 "/Make member "MOUSE_CHANCES_TO_EAT" "protected".(«­•”ıÿÿÿÿ8Òãıûæ1
+Q
+java:S2386´".Make member "GOAT_CHANCES_TO_EAT" "protected".(¯şÑ±üÿÿÿÿ8Ôãıûæ1
+M
+java:S2386È"/Make member "SHEEP_CHANCES_TO_EAT" "protected".(¶àèÕ8Öãıûæ1
+Q
+java:S2386Ü".Make member "BOAR_CHANCES_TO_EAT" "protected".(­÷è™øÿÿÿÿ8Øãıûæ1
+Q
+java:S2386ğ".Make member "BULL_CHANCES_TO_EAT" "protected".(¸åÍüÿÿÿÿ8Úãıûæ1
+L
+java:S2386„".Make member "DUCK_CHANCES_TO_EAT" "protected".(·ï´ú8Üãıûæ1
+S
+java:S2386˜"5Make member "CATERPILLAR_CHANCES_TO_EAT" "protected".(ûå½”8Şãıûæ1
+M
+java:S2386¬"/Make member "CONTAINER_OF_CHANCES" "protected".(½—Ş8ßãıûæ1

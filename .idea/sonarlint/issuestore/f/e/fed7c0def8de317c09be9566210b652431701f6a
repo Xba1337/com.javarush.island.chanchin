@@ -1,7 +1,7 @@
 
 b
-java:S1854"@Remove this useless assignment to local variable "worldCreator".(¨·éÍúÿÿÿÿ8Ý­è¶æ1
+java:S1854"@Remove this useless assignment to local variable "worldCreator".(Ëž–Úÿÿÿÿÿ8Ý­è¶æ1
 S
-java:S1481"1Remove this unused "worldCreator" local variable.(¨·éÍúÿÿÿÿ8ß­è¶æ1
+java:S1481"1Remove this unused "worldCreator" local variable.(Ëž–Úÿÿÿÿÿ8ß­è¶æ1
 H
-java:S1128"+Remove this unused import 'world.map.Cell'.(¨àµÇ8ß­è¶æ1
+java:S1128"+Remove this unused import 'world.map.Cell'.(¨àµÇ8öç †ç1

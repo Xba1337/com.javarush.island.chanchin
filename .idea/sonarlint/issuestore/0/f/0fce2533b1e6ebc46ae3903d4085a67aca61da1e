@@ -1,15 +1,7 @@
 
-g	java:S112@"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8’ğ¶æ1
-g	java:S112B"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8’ğ¶æ1
-g	java:S112D"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8’ğ¶æ1
-g	java:S112F"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8’ğ¶æ1
-a
-java:S2147A"DCombine this catch with the one at line 63, which has the same body.(Å¡ß8§’ğ¶æ1
-a
-java:S2147C"DCombine this catch with the one at line 65, which has the same body.(åşáÿ8§’ğ¶æ1
-f
-java:S2147E"DCombine this catch with the one at line 67, which has the same body.(¼¯•¶ùÿÿÿÿ8§’ğ¶æ1
 X
-java:S1128";Remove this unused import 'world.animals.herbivorous.Boar'.(¢‡Ù›8ù˜ù¶æ1
-[
-java:S1128"9Remove this unused import 'world.animals.predators.Wolf'.(æ®™Êıÿÿÿÿ8ù˜ù¶æ1
+java:S1128"6Remove this unused import 'world.animals.herbivorous'.(şÇÉşÿÿÿÿ8Ã„Ö‰ç1
+Q
+java:S1128"4Remove this unused import 'world.animals.predators'.(›öÅ¿8Ä„Ö‰ç1
+L
+java:S1128"/Remove this unused import 'java.util.Iterator'.(¥ÍòÕ8Ä„Ö‰ç1

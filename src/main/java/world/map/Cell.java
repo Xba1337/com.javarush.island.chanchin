@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Cell {
 
@@ -14,8 +15,8 @@ public class Cell {
 
     private int y;
 
-    private Map<Class<? extends Animal>,Animal> containedAnimals = new HashMap<>();
-    private Set<Grass> containedPlants = new HashSet<>();
+    private Map<Class<? extends Animal>, Animal> containedAnimals = new HashMap<>();
+    private Map<Class<? extends Grass>, Grass> containedPlants = new HashMap<>();
 
 
     public Cell(int x, int y) {
@@ -35,7 +36,7 @@ public class Cell {
         return containedAnimals;
     }
 
-    public Set<Grass> getContainedPlants() {
+    public Map<Class<? extends Grass>, Grass> getContainedPlants() {
         return containedPlants;
     }
 }
