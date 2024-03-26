@@ -1,6 +1,6 @@
 package world.constants;
 
-import world.Eatable;
+import world.Organism;
 import world.animals.Animal;
 import world.animals.herbivorous.*;
 import world.animals.predators.*;
@@ -13,38 +13,45 @@ import java.util.Set;
 
 public class Constants {
 
-    public static int WORLD_SIZE_X = 10;
-    public static int WORLD_SIZE_Y = 10;
-    public static final Map<Class<? extends Animal>, Map<Class<? extends Eatable>, Integer>> CONTAINER_OF_CHANCES;
-    public static final Map<Class<? extends Eatable>, Integer> WOLF_CHANCES_TO_EAT;
+    public static int WORLD_SIZE_X = 1;
+    public static int WORLD_SIZE_Y = 1;
 
-    public static final Map<Class<? extends Eatable>, Integer> SNAKE_CHANCES_TO_EAT;
+    public static int MAX_STEPS_OF_SIMULATION = 10;
 
-    public static final Map<Class<? extends Eatable>, Integer> FOX_CHANCES_TO_EAT;
+    public static int DELAY = 1000; //ms
 
-    public static final Map<Class<? extends Eatable>, Integer> BEAR_CHANCES_TO_EAT;
+    public static int INIT_DELAY = 1000; //ms
 
-    public static final Map<Class<? extends Eatable>, Integer> EAGLE_CHANCES_TO_EAT;
+    public static final Map<Class<? extends Animal>, Map<Class<? extends Organism>, Integer>> CONTAINER_OF_CHANCES;
+    public static final Map<Class<? extends Organism>, Integer> WOLF_CHANCES_TO_EAT;
 
-    public static final Map<Class<? extends Eatable>, Integer> HORSE_CHANCES_TO_EAT;
+    public static final Map<Class<? extends Organism>, Integer> SNAKE_CHANCES_TO_EAT;
 
-    public static final Map<Class<? extends Eatable>, Integer> DEER_CHANCES_TO_EAT;
+    public static final Map<Class<? extends Organism>, Integer> FOX_CHANCES_TO_EAT;
 
-    public static final Map<Class<? extends Eatable>, Integer> HARE_CHANCES_TO_EAT;
+    public static final Map<Class<? extends Organism>, Integer> BEAR_CHANCES_TO_EAT;
 
-    public static final Map<Class<? extends Eatable>, Integer> MOUSE_CHANCES_TO_EAT;
+    public static final Map<Class<? extends Organism>, Integer> EAGLE_CHANCES_TO_EAT;
 
-    public static final Map<Class<? extends Eatable>, Integer> GOAT_CHANCES_TO_EAT;
+    public static final Map<Class<? extends Organism>, Integer> HORSE_CHANCES_TO_EAT;
 
-    public static final Map<Class<? extends Eatable>, Integer> SHEEP_CHANCES_TO_EAT;
+    public static final Map<Class<? extends Organism>, Integer> DEER_CHANCES_TO_EAT;
 
-    public static final Map<Class<? extends Eatable>, Integer> BOAR_CHANCES_TO_EAT;
+    public static final Map<Class<? extends Organism>, Integer> HARE_CHANCES_TO_EAT;
 
-    public static final Map<Class<? extends Eatable>, Integer> BULL_CHANCES_TO_EAT;
+    public static final Map<Class<? extends Organism>, Integer> MOUSE_CHANCES_TO_EAT;
 
-    public static final Map<Class<? extends Eatable>, Integer> DUCK_CHANCES_TO_EAT;
+    public static final Map<Class<? extends Organism>, Integer> GOAT_CHANCES_TO_EAT;
 
-    public static final Map<Class<? extends Eatable>, Integer> CATERPILLAR_CHANCES_TO_EAT;
+    public static final Map<Class<? extends Organism>, Integer> SHEEP_CHANCES_TO_EAT;
+
+    public static final Map<Class<? extends Organism>, Integer> BOAR_CHANCES_TO_EAT;
+
+    public static final Map<Class<? extends Organism>, Integer> BULL_CHANCES_TO_EAT;
+
+    public static final Map<Class<? extends Organism>, Integer> DUCK_CHANCES_TO_EAT;
+
+    public static final Map<Class<? extends Organism>, Integer> CATERPILLAR_CHANCES_TO_EAT;
 
     public static final Map<Class<? extends Animal>, String[]> STRINGS_FOR_ANIMALS;
 
@@ -59,16 +66,16 @@ public class Constants {
     static {
         STRINGS_FOR_ANIMALS = new HashMap<>();
 
-        STRINGS_FOR_ANIMALS.put(Boar.class, new String[]{"Boar", "BR"});
-        STRINGS_FOR_ANIMALS.put(Bull.class, new String[]{"Bull", "BL"});
+        STRINGS_FOR_ANIMALS.put(Boar.class, new String[]{"Boar", "Br"});
+        STRINGS_FOR_ANIMALS.put(Bull.class, new String[]{"Bull", "Bl"});
         STRINGS_FOR_ANIMALS.put(Caterpillar.class, new String[]{"Caterpillar", "C"});
-        STRINGS_FOR_ANIMALS.put(Deer.class, new String[]{"Deer", "DR"});
+        STRINGS_FOR_ANIMALS.put(Deer.class, new String[]{"Deer", "Dr"});
         STRINGS_FOR_ANIMALS.put(Duck.class, new String[]{"Duck", "D"});
         STRINGS_FOR_ANIMALS.put(Goat.class, new String[]{"Goat", "G"});
-        STRINGS_FOR_ANIMALS.put(Hare.class, new String[]{"Hare", "HR"});
+        STRINGS_FOR_ANIMALS.put(Hare.class, new String[]{"Hare", "Hr"});
         STRINGS_FOR_ANIMALS.put(Horse.class, new String[]{"Horse", "H"});
         STRINGS_FOR_ANIMALS.put(Mouse.class, new String[]{"Mouse", "M"});
-        STRINGS_FOR_ANIMALS.put(Sheep.class, new String[]{"Sheep", "SH"});
+        STRINGS_FOR_ANIMALS.put(Sheep.class, new String[]{"Sheep", "Sh"});
         STRINGS_FOR_ANIMALS.put(Bear.class, new String[]{"Bear", "B"});
         STRINGS_FOR_ANIMALS.put(Eagle.class, new String[]{"Eagle", "E"});
         STRINGS_FOR_ANIMALS.put(Fox.class, new String[]{"Fox", "F"});
@@ -77,7 +84,7 @@ public class Constants {
 
         STRINGS_FOR_PLANTS = new HashMap<>();
 
-        STRINGS_FOR_PLANTS.put(Grass.class, new String[]{"Grass", "II"});
+        STRINGS_FOR_PLANTS.put(Grass.class, new String[]{"Grass", "ii"});
 
     }
 

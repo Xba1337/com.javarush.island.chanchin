@@ -1,16 +1,7 @@
 
 Q
-java:S1066N"/Merge this if statement with the enclosing one.(¼«¦ÿÿÿÿÿ8ÜèÑ‰ç1
+java:S1066X"/Merge this if statement with the enclosing one.(¼«¦ÿÿÿÿÿ8Ğš†Îç1
 N
-java:S2387","animal" is the name of a field in "Animal".(øŸÏƒüÿÿÿÿ8ÆÁº…ç1
+java:S2387","animal" is the name of a field in "Animal".(øŸÏƒüÿÿÿÿ8Úš†Îç1
 B
-java:S2157"%Add a "clone()" method to this class.(¨÷•ÿ8ñ¢´…ç1
-G	java:S106-"+Replace this use of System.out by a logger.(¿Çøà8ù¢´…ç1
-F	java:S106O"+Replace this use of System.out by a logger.(ïÃÊ=8ı¢´…ç1
-L	java:S106{"+Replace this use of System.out by a logger.(›…ÅÒÿÿÿÿÿ8ş¢´…ç1
-G	java:S106|"+Replace this use of System.out by a logger.(ÄèŞé8ş¢´…ç1
-H	java:S106„"+Replace this use of System.out by a logger.(ÕÌ†Ó8€£´…ç1
-M	java:S106†"+Replace this use of System.out by a logger.(¬ÿ‘Óıÿÿÿÿ8Îô†ç1
-H	java:S106—"+Replace this use of System.out by a logger.(ºë8ÂéÑ‰ç1
-T
-java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ8ÌƒÖ‰ç1
+java:S2157"%Add a "clone()" method to this class.(¨÷•ÿ8Úš†Îç1

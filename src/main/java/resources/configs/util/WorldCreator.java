@@ -1,15 +1,14 @@
-package world.map;
+package resources.configs.util;
 
 import lombok.SneakyThrows;
-import resources.configs.util.Randomizer;
 import world.animals.Animal;
-import world.animals.herbivorous.*;
-import world.animals.predators.*;
 import world.constants.Constants;
+import world.map.Cell;
+import world.map.WorldMap;
 import world.plants.Grass;
 
 import java.lang.reflect.Constructor;
-import java.util.Iterator;
+
 
 
 public class WorldCreator {
@@ -24,22 +23,12 @@ public class WorldCreator {
         this.worldSizeY = worldSizeY;
         worldMap = new WorldMap(worldSizeX, worldSizeY);
         generateCells();
-        for (int i = 0; i < getWorldSizeY(); i++) {
-            for (int j = 0; j < getWorldSizeX(); j++) {
-                Cell cell1 = WorldMap.getCell(j, i);
-
-                cell1.getContainedPlants().get(Grass.class).multiply(cell1);
-            }
-
-        }
-
-
     }
 
     public void generateCells() {
         Cell[][] cells = worldMap.getCells();
-        for (int y = 0; y < getWorldSizeY(); y++) {
-            for (int x = 0; x < getWorldSizeX(); x++) {
+        for (int y = 0; y < Constants.WORLD_SIZE_Y; y++) {
+            for (int x = 0; x < Constants.WORLD_SIZE_X; x++) {
                 cells[x][y] = new Cell(x, y);
             }
         }

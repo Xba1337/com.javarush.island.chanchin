@@ -1,13 +1,9 @@
 
 z
-java:S1488)"]Immediately return this expression instead of assigning it to the temporary variable "clone".(®÷ˆÆ8®€À€ç1
+java:S1488%"]Immediately return this expression instead of assigning it to the temporary variable "clone".(®÷ˆÆ8®€À€ç1
 7
 java:S1700"Rename field "animal"(„Ã”Ôúÿÿÿÿ8™ß¦¶æ1
 [
 java:S5993"9Change the visibility of this constructor to "protected".(÷ç‘ïÿÿÿÿÿ8ß¦¶æ1
 u
-java:S2975'"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(ó‰³¯øÿÿÿÿ8Æ€À€ç1
-I
-java:S1128",Remove this unused import 'lombok.ToString'.(¹ÂÄÓ8‚€Ö‰ç1
-K
-java:S1128	".Remove this unused import 'java.util.Objects'.(¼¸õ›8‚€Ö‰ç1
+java:S2975#"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(ó‰³¯øÿÿÿÿ8Æ€À€ç1

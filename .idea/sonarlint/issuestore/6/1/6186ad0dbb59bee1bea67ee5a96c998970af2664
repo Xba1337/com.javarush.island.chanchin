@@ -1,7 +1,5 @@
 
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(ø—™¾8ÅÔõ‡ç1
-G	java:S106&"+Replace this use of System.out by a logger.(ì„Á·8¤¾Ïˆç1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(ó®Ž›øÿÿÿÿ8ƒ÷ßÍç1
 f
-java:S42015"IRemove this unnecessary null check; "instanceof" returns false for nulls.(£½„Õ8ÉÔõ‡ç1
-G	java:S106:"+Replace this use of System.out by a logger.(šéã¦8ËÜÏˆç1
+java:S42018"IRemove this unnecessary null check; "instanceof" returns false for nulls.(£½„Õ8Œ÷ßÍç1

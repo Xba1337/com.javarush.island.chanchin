@@ -1,5 +1,3 @@
 
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(ø—™¾8Àú¾‡ç1
-G	java:S106'"+Replace this use of System.out by a logger.(ì„Á·8»¦¿‡ç1
-G	java:S106;"+Replace this use of System.out by a logger.( æ¥ï8ž¶Ñˆç1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(ó®Ž›øÿÿÿÿ8Àú¾‡ç1

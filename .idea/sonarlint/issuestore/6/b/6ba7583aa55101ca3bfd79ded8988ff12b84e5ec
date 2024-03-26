@@ -1,9 +1,3 @@
 
 k
-java:S4201#"IRemove this unnecessary null check; "instanceof" returns false for nulls.(¾ò²Äúÿÿÿÿ8ĞÕş…ç1
-G	java:S106("+Replace this use of System.out by a logger.(¿Çøà8ú¡ò‡ç1
-X
-java:S1128	";Remove this unused import 'world.animals.herbivorous.Boar'.(¢‡Ù›8®‚ü‰ç1
-_
-java:S1128
-"BRemove this unused import 'world.animals.herbivorous.Caterpillar'.(À–Ÿ8®‚ü‰ç1
+java:S4201&"IRemove this unnecessary null check; "instanceof" returns false for nulls.(¾ò²Äúÿÿÿÿ8ê–ŞÍç1

@@ -2,16 +2,14 @@ package world.plants;
 
 
 import resources.configs.util.Randomizer;
-import world.Eatable;
-import world.animals.Animal;
+import world.Organism;
 import world.constants.Constants;
 import world.map.Cell;
 
-import java.lang.reflect.Constructor;
 import java.util.Map;
 import java.util.Set;
 
-public class Grass implements Eatable {
+public class Grass extends Organism{
 
     private final double weight;
 
@@ -31,14 +29,14 @@ public class Grass implements Eatable {
                 Grass plant = new Grass();
                 cell.getContainedPlants()
                     .put(Grass.class, plant);
-                System.out.println("трава " + plant + " выросла высотой " + plant.currentHeight);
             }
         }
     }
 
     public boolean checkNumberOfPlants(Grass grass, Cell cell){
-        Set<Map.Entry<Class<? extends Grass>, Grass>> mapOfPlants = cell.getContainedPlants().
-                                                                           entrySet();
+        Set<Map.Entry<Class<? extends Grass>, Grass>> mapOfPlants = cell.getContainedPlants()
+                                                                        .entrySet();
+
         int plantCounter = 0;
         for (Map.Entry<Class<? extends Grass>, Grass> animalEntry :
                 mapOfPlants) {
