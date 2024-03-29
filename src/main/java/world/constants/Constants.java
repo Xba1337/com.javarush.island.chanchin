@@ -13,14 +13,14 @@ import java.util.Set;
 
 public class Constants {
 
-    public static int WORLD_SIZE_X = 1;
-    public static int WORLD_SIZE_Y = 1;
+    public static int WORLD_SIZE_Y = 10;
+    public static int WORLD_SIZE_X = 10;
 
-    public static int MAX_STEPS_OF_SIMULATION = 10;
+    public static int MAX_STEPS_OF_SIMULATION = 300;
 
-    public static int DELAY = 1000; //ms
+    public static int DELAY = 250; //ms
 
-    public static int INIT_DELAY = 1000; //ms
+    public static int INIT_DELAY = 250; //ms
 
     public static final Map<Class<? extends Animal>, Map<Class<? extends Organism>, Integer>> CONTAINER_OF_CHANCES;
     public static final Map<Class<? extends Organism>, Integer> WOLF_CHANCES_TO_EAT;
@@ -66,30 +66,31 @@ public class Constants {
     static {
         STRINGS_FOR_ANIMALS = new HashMap<>();
 
-        STRINGS_FOR_ANIMALS.put(Boar.class, new String[]{"Boar", "Br"});
-        STRINGS_FOR_ANIMALS.put(Bull.class, new String[]{"Bull", "Bl"});
-        STRINGS_FOR_ANIMALS.put(Caterpillar.class, new String[]{"Caterpillar", "C"});
-        STRINGS_FOR_ANIMALS.put(Deer.class, new String[]{"Deer", "Dr"});
-        STRINGS_FOR_ANIMALS.put(Duck.class, new String[]{"Duck", "D"});
-        STRINGS_FOR_ANIMALS.put(Goat.class, new String[]{"Goat", "G"});
-        STRINGS_FOR_ANIMALS.put(Hare.class, new String[]{"Hare", "Hr"});
-        STRINGS_FOR_ANIMALS.put(Horse.class, new String[]{"Horse", "H"});
-        STRINGS_FOR_ANIMALS.put(Mouse.class, new String[]{"Mouse", "M"});
-        STRINGS_FOR_ANIMALS.put(Sheep.class, new String[]{"Sheep", "Sh"});
-        STRINGS_FOR_ANIMALS.put(Bear.class, new String[]{"Bear", "B"});
-        STRINGS_FOR_ANIMALS.put(Eagle.class, new String[]{"Eagle", "E"});
-        STRINGS_FOR_ANIMALS.put(Fox.class, new String[]{"Fox", "F"});
-        STRINGS_FOR_ANIMALS.put(Snake.class, new String[]{"Snake", "S"});
-        STRINGS_FOR_ANIMALS.put(Wolf.class, new String[]{"Wolf", "W"});
+        STRINGS_FOR_ANIMALS.put(Boar.class, new String[]{"Boar", "\uD83D\uDC17"});
+        STRINGS_FOR_ANIMALS.put(Bull.class, new String[]{"Bull", "\uD83D\uDC03"});
+        STRINGS_FOR_ANIMALS.put(Caterpillar.class, new String[]{"Caterpillar", "\uD83D\uDC1B"});
+        STRINGS_FOR_ANIMALS.put(Deer.class, new String[]{"Deer", "\uD83E\uDD8C"});
+        STRINGS_FOR_ANIMALS.put(Duck.class, new String[]{"Duck", "\uD83E\uDD86"});
+        STRINGS_FOR_ANIMALS.put(Goat.class, new String[]{"Goat", "\uD83D\uDC10"});
+        STRINGS_FOR_ANIMALS.put(Hare.class, new String[]{"Hare", "\uD83D\uDC07"});
+        STRINGS_FOR_ANIMALS.put(Horse.class, new String[]{"Horse", "\uD83D\uDC0E"});
+        STRINGS_FOR_ANIMALS.put(Mouse.class, new String[]{"Mouse", "\uD83D\uDC01"});
+        STRINGS_FOR_ANIMALS.put(Sheep.class, new String[]{"Sheep", "\uD83D\uDC11"});
+        STRINGS_FOR_ANIMALS.put(Bear.class, new String[]{"Bear", "\uD83D\uDC3B"});
+        STRINGS_FOR_ANIMALS.put(Eagle.class, new String[]{"Eagle", "\uD83E\uDD85"});
+        STRINGS_FOR_ANIMALS.put(Fox.class, new String[]{"Fox", "\uD83E\uDD8A"});
+        STRINGS_FOR_ANIMALS.put(Snake.class, new String[]{"Snake", "\uD83D\uDC0D"});
+        STRINGS_FOR_ANIMALS.put(Wolf.class, new String[]{"Wolf", "\uD83D\uDC3A"});
 
         STRINGS_FOR_PLANTS = new HashMap<>();
 
-        STRINGS_FOR_PLANTS.put(Grass.class, new String[]{"Grass", "ii"});
+        STRINGS_FOR_PLANTS.put(Grass.class, new String[]{"Grass", "\uD83C\uDF3F"});
 
     }
 
     static {
         BASE_FOR_ANIMALS = new HashMap<>();
+
         BASE_FOR_ANIMALS.put(Boar.class, new double[]{400, 50, 2, 50});
         BASE_FOR_ANIMALS.put(Bull.class, new double[]{700, 10, 3, 100});
         BASE_FOR_ANIMALS.put(Caterpillar.class, new double[]{0.01, 1000, 0, 0});

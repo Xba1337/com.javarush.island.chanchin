@@ -1,7 +1,7 @@
 package world.animals;
 
 import lombok.SneakyThrows;
-import resources.configs.util.Randomizer;
+import util.Randomizer;
 import world.animals.herbivorous.Caterpillar;
 import world.constants.Constants;
 import world.map.Cell;
@@ -10,17 +10,15 @@ import world.plants.Grass;
 
 import java.lang.reflect.Constructor;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Set;
 
 public class Herbivorous extends Animal {
 
-    private double currentStomachVolume;
     protected Class<? extends Herbivorous> animal;
 
     public Herbivorous() {
+        super();
         this.animal = getClass();
-        this.currentStomachVolume = Constants.BASE_FOR_ANIMALS.get(animal)[3];
     }
 
     @Override
@@ -33,30 +31,26 @@ public class Herbivorous extends Animal {
         boolean isAte = false;
 
         try {
-            Iterator<Map.Entry<Class<? extends Grass>, Grass>> grassIterator = cell.getContainedPlants()
-                                                                                   .entrySet().
-                                                                                   iterator();
-
+            Iterator<Grass> grassIterator = cell.getContainedPlants()
+                                                .iterator();
             while (grassIterator.hasNext() && ! isAte) {
-                Map.Entry<Class<? extends Grass>, Grass> victim = grassIterator.next();
-                if (victim.getValue() != null) {
-                    double additionalWeight = Constants.BASE_FOR_PLANTS.get(victim.getKey())[0];
-                    if ((herbivorous.getCurrentStomachVolume() + additionalWeight) > Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3]) {
-                        herbivorous.setCurrentStomachVolume(Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3]);
+                Grass victim = grassIterator.next();
+                if (victim != null) {
+                    double additionalWeight = Constants.BASE_FOR_PLANTS.get(victim.getClass())[0];
+                    if ((currentStomachVolume + additionalWeight) > Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3]) {
+                        currentStomachVolume = Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3];
                         isAte = true;
                     } else {
-                        herbivorous.setCurrentStomachVolume(herbivorous.getCurrentStomachVolume() + additionalWeight);
+                        currentStomachVolume = currentStomachVolume + additionalWeight;
                     }
                     grassIterator.remove();
                 }
-
             }
         } finally {
             cell.getLock()
                 .unlock();
         }
         return isAte;
-
     }
 
     @SneakyThrows
@@ -68,22 +62,21 @@ public class Herbivorous extends Animal {
         Animal herbivorous = this;
 
         try {
-            Iterator<Map.Entry<Class<? extends Animal>, Animal>> coupleFinder = cell.getContainedAnimals()
-                                                                                    .entrySet()
-                                                                                    .iterator();
-
+            Iterator<Animal> coupleFinder = cell.getContainedAnimals()
+                                                .iterator();
             boolean isMultiplied = false;
             while (coupleFinder.hasNext() && ! isMultiplied) {
-                Map.Entry<Class<? extends Animal>, Animal> couple = coupleFinder.next();
-                if (couple.getKey() == herbivorous.getClass() && ! couple.getValue()
-                                                                         .equals(herbivorous)) {
+                Animal couple = coupleFinder.next();
+                if (couple.getClass() == herbivorous.getClass() && ! couple.equals(herbivorous)) {
                     if (checkNumberOfAnimals(herbivorous, cell)) {
-                        Constructor<? extends Animal> animalConstructor = herbivorous.getClass()
-                                                                                     .getDeclaredConstructor();
-                        Animal newAnimal = animalConstructor.newInstance();
-                        cell.getContainedAnimals()
-                            .put(herbivorous.getClass(), newAnimal);
-                        isMultiplied = true;
+                        if (Randomizer.getRandom()) {
+                            Constructor<? extends Animal> animalConstructor = herbivorous.getClass()
+                                                                                         .getDeclaredConstructor();
+                            Animal newAnimal = animalConstructor.newInstance();
+                            cell.getContainedAnimals()
+                                .add(newAnimal);
+                            isMultiplied = true;
+                        }
                     }
                 }
             }
@@ -91,7 +84,6 @@ public class Herbivorous extends Animal {
             cell.getLock()
                 .unlock();
         }
-
     }
 
     @Override
@@ -128,9 +120,9 @@ public class Herbivorous extends Animal {
             if (checkTheWay(herbivorous, WorldMap.getCell(posX, posY))) {
                 WorldMap.getCell(posX, posY).
                         getContainedAnimals().
-                        put(herbivorous.getClass(), herbivorous.clone());
+                        add(herbivorous.clone());
                 die(herbivorous, cell);
-            } else move(cell);
+            }
         } finally {
             cell.getLock()
                 .unlock();
@@ -146,9 +138,9 @@ public class Herbivorous extends Animal {
 
         boolean dead = false;
 
-        currentStomachVolume = currentStomachVolume - Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3];
         try {
-            if (herbivorous.getCurrentStomachVolume() <= 0 && ! (herbivorous instanceof Caterpillar)) {
+            currentStomachVolume = currentStomachVolume - Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3] / 20;
+            if (currentStomachVolume <= 0 && ! (herbivorous instanceof Caterpillar)) {
                 die(herbivorous, cell);
                 dead = true;
             }
@@ -164,28 +156,21 @@ public class Herbivorous extends Animal {
             .lock();
 
         try {
-            Iterator<Map.Entry<Class<? extends Animal>, Animal>> animalsFromCell = cell.getContainedAnimals()
-                                                                                       .entrySet()
-                                                                                       .iterator();
+            Iterator<Animal> animalsFromCell = cell.getContainedAnimals()
+                                                   .iterator();
             boolean success = false;
-            if (animal.getCurrentStomachVolume() <= 0) {
-                while (animalsFromCell.hasNext() && ! success) {
-                    Animal removable = animalsFromCell.next()
-                                                      .getValue();
-                    if (removable.equals(animal)) {
-                        animalsFromCell.remove();
-                        success = true;
-                    }
+
+            while (animalsFromCell.hasNext() && ! success) {
+                Animal remove = animalsFromCell.next();
+                if (remove.equals(animal)) {
+                    animalsFromCell.remove();
+                    success = true;
                 }
             }
         } finally {
             cell.getLock()
                 .unlock();
         }
-    }
-
-    public double getCurrentStomachVolume() {
-        return currentStomachVolume;
     }
 
     public boolean checkTheWay(Animal animal, Cell cell) {
@@ -195,22 +180,20 @@ public class Herbivorous extends Animal {
         int animalCounter = 0;
 
         try {
-            Map<Class<? extends Animal>, Animal> listInNewPosition = cell.getContainedAnimals();
-            Set<Map.Entry<Class<? extends Animal>, Animal>> animalsInNewCell = listInNewPosition.entrySet();
+            Iterator<Animal> listInNewPosition = cell.getContainedAnimals().iterator();
 
-
-            for (Map.Entry<Class<? extends Animal>, Animal> animalInNewCell :
-                    animalsInNewCell) {
-                if (animalInNewCell.getKey() == animal.getClass()) {
+            while (listInNewPosition.hasNext()){
+                Animal movingAnimal = listInNewPosition.next();
+                if (movingAnimal.getClass() == animal.getClass()) {
                     animalCounter++;
                 }
             }
-
+            return animalCounter < Constants.BASE_FOR_ANIMALS.get(animal.getClass())[1];
         } finally {
             cell.getLock()
                 .unlock();
         }
-        return animalCounter < Constants.BASE_FOR_ANIMALS.get(animal.getClass())[1];
+
 
     }
 
@@ -221,12 +204,11 @@ public class Herbivorous extends Animal {
         int animalCounter = 0;
 
         try {
-            Set<Map.Entry<Class<? extends Animal>, Animal>> mapOfAnimals = cell.getContainedAnimals().
-                                                                               entrySet();
+            Set<Animal> setOfAnimals = cell.getContainedAnimals();
 
-            for (Map.Entry<Class<? extends Animal>, Animal> animalEntry :
-                    mapOfAnimals) {
-                if (animalEntry.getKey() == animal.getClass()) {
+            for (Animal animals :
+                    setOfAnimals) {
+                if (animals.getClass() == animal.getClass()) {
                     animalCounter++;
                 }
             }
@@ -236,8 +218,5 @@ public class Herbivorous extends Animal {
                 .unlock();
         }
         return animalCounter < Constants.BASE_FOR_ANIMALS.get(animal.getClass())[1];
-
     }
-
-
 }

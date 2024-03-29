@@ -1,6 +1,6 @@
 package world.animals.herbivorous;
 
-import resources.configs.util.Randomizer;
+import util.Randomizer;
 import world.Organism;
 import world.animals.Animal;
 import world.animals.Herbivorous;
@@ -14,7 +14,9 @@ import java.util.Map;
 
 public class Boar extends Herbivorous {
 
+
     public Boar() {
+        super();
         this.animal = Boar.class;
     }
 
@@ -28,46 +30,42 @@ public class Boar extends Herbivorous {
         boolean isAte = false;
 
         try {
-            Iterator<Map.Entry<Class<? extends Grass>, Grass>> grassIterator = cell.getContainedPlants()
-                                                                                   .entrySet().
-                                                                                   iterator();
-            Iterator<Map.Entry<Class<? extends Animal>, Animal>> victimIterator = cell.getContainedAnimals()
-                                                                                      .entrySet()
-                                                                                      .iterator();
+            Iterator<Grass> grassIterator = cell.getContainedPlants()
+                                                .iterator();
+            Iterator<Animal> victimIterator = cell.getContainedAnimals()
+                                                  .iterator();
 
             if (Randomizer.getRandom()) {
                 while (grassIterator.hasNext() && ! isAte) {
-                    Map.Entry<Class<? extends Grass>, Grass> victim = grassIterator.next();
-                    if (victim.getValue() != null) {
-                        double additionalWeight = Constants.BASE_FOR_PLANTS.get(victim.getKey())[0];
-                        if ((herbivorous.getCurrentStomachVolume() + additionalWeight) > Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3]) {
-                            herbivorous.setCurrentStomachVolume(Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3]);
+                    Grass victim = grassIterator.next();
+                    if (victim != null) {
+                        double additionalWeight = Constants.BASE_FOR_PLANTS.get(victim.getClass())[0];
+                        if ((currentStomachVolume + additionalWeight) > Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3]) {
+                            currentStomachVolume = Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3];
                             isAte = true;
                         } else {
-                            herbivorous.setCurrentStomachVolume(herbivorous.getCurrentStomachVolume() + additionalWeight);
+                            currentStomachVolume = currentStomachVolume + additionalWeight;
                         }
                         grassIterator.remove();
                     }
-
                 }
             } else {
                 while (victimIterator.hasNext() && ! isAte) {
-                    Map.Entry<Class<? extends Animal>, Animal> victim = victimIterator.next();
-                    if (victim.getValue() instanceof Caterpillar || victim.getValue() instanceof Mouse && victim.getValue() != null) {
-                        Herbivorous mouseOrCaterpillar = (Herbivorous) victim.getValue();
+                    Animal victim = victimIterator.next();
+                    if (victim instanceof Caterpillar || victim instanceof Mouse && victim != null) {
+                        Herbivorous mouseOrCaterpillar = (Herbivorous) victim;
                         Map<Class<? extends Organism>, Integer> mapOfChances = Constants.CONTAINER_OF_CHANCES.get(herbivorous.getClass());
                         int chancesToEat = mapOfChances.get(mouseOrCaterpillar.getClass());
                         if (Randomizer.getRandom(chancesToEat)) {
-                            double additionalWeight = Constants.BASE_FOR_ANIMALS.get(victim.getKey())[0];
-                            if ((herbivorous.getCurrentStomachVolume() + additionalWeight) > Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3]) {
-                                herbivorous.setCurrentStomachVolume(Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3]);
+                            double additionalWeight = Constants.BASE_FOR_ANIMALS.get(victim.getClass())[0];
+                            if ((chancesToEat + additionalWeight) > Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3]) {
+                                currentStomachVolume = Constants.BASE_FOR_ANIMALS.get(herbivorous.getClass())[3];
                             } else {
-                                herbivorous.setCurrentStomachVolume(herbivorous.getCurrentStomachVolume() + additionalWeight);
+                                currentStomachVolume = currentStomachVolume + additionalWeight;
                             }
                             victimIterator.remove();
                             isAte = true;
                         }
-
                     }
                 }
             }
@@ -77,6 +75,5 @@ public class Boar extends Herbivorous {
                 .unlock();
         }
         return isAte;
-
     }
 }

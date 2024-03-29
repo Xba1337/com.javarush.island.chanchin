@@ -1,4 +1,4 @@
-package resources.configs.util;
+package util;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -20,6 +20,7 @@ public class Randomizer {
         return ThreadLocalRandom.current()
                                 .nextBoolean();
     }
+
 
     public static int getDeciRandom(int from, int to){
         return ThreadLocalRandom.current().nextInt(from, to) * 10;

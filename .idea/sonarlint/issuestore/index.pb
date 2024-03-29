@@ -32,8 +32,6 @@ a
 1src/main/java/world/animals/herbivorous/Bull.java,7\9\79605c5f6f35e485b3c7c90ba57f73e1b1f389b4
 a
 1src/main/java/world/animals/herbivorous/Boar.java,6\1\6186ad0dbb59bee1bea67ee5a96c998970af2664
-V
-&src/main/java/world/EntityFactory.java,3\3\33e7dda143c3334780dbe714ca6387dc0f27f59b
 W
 'src/main/java/world/animals/Animal.java,9\3\939aa01104687349433f132dfbbe66030bb330cf
 Q
@@ -46,8 +44,6 @@ b
 2src/main/java/world/animals/herbivorous/Horse.java,9\e\9e80ef83f3d22c85652e1255482c3611ab4f400d
 b
 2src/main/java/world/animals/herbivorous/Mouse.java,d\5\d5454e2b6d260ef0eece4bdd0d9bc22a04123f57
-d
-4src/main/java/resources/configs/util/Randomizer.java,e\b\ebd3e275efb3fc2d80e32366d3c22eba5a140f30
 U
 %src/main/java/world/map/WorldMap.java,b\a\bae950e7e87cf4c5d02d21d317533162dd04d028
 _
@@ -58,8 +54,6 @@ Y
 ,src/main/java/world/animals/Herbivorous.java,2\4\24408842d7ff9a081d1e53031f0d1c0d4e8d2ced
 Å
 Q.idea/sonarlint/securityhotspotstore/b/a/bae950e7e87cf4c5d02d21d317533162dd04d028,9\c\9c30f590b4ebd143c8e1ddeabef1e6504c1c169f
-w
-G.idea/sonarlint/issuestore/f/5/f55f9a7a5f0f3ff6c80d98a2594146601e00ba3d,c\b\cb5f09c9b56fa009beb3d04f1f378e7cbdd8a41c
 w
 G.idea/sonarlint/issuestore/f/3/f36316853087ec7c7ecf06849ffdffc8cb8cda5a,c\f\cf5751e6ab649f5a708ab45a3c44bdd1b324df66
 Å
@@ -75,11 +69,7 @@ Q.idea/sonarlint/securityhotspotstore/f/3/f36316853087ec7c7ecf06849ffdffc8cb8cda
 Å
 Q.idea/sonarlint/securityhotspotstore/f/1/f11ea55369260afdf32f4b0b240c95a61eb54deb,d\1\d1aa58e55c8060146408be61587fb403a93e3b06
 Å
-Q.idea/sonarlint/securityhotspotstore/f/5/f55f9a7a5f0f3ff6c80d98a2594146601e00ba3d,d\a\da69a8147b1d110af09f0eda9a2214f7e8283471
-Å
 Q.idea/sonarlint/securityhotspotstore/0/d/0d55bad2cfbea79ccd72e48a1a3ae00d8d55a678,d\f\df3f2a7f5a09eddf15396af9e321472e664f33d8
-Å
-Q.idea/sonarlint/securityhotspotstore/0/f/0fce2533b1e6ebc46ae3903d4085a67aca61da1e,3\c\3c4a564566d85e58333921e2a2e03c5372fc9753
 w
 G.idea/sonarlint/issuestore/3/a/3a34d24d656e7d1ce50019c38a47d7a814acb37c,a\b\abf91bccce06a55d1703480f101acffa12f0bbdf
 Å
@@ -162,8 +152,6 @@ w
 G.idea/sonarlint/issuestore/d/5/d5454e2b6d260ef0eece4bdd0d9bc22a04123f57,6\b\6b4df95f96ec7b930bc0326647968e29d5962831
 F
 src/main/java/App.java,6\7\67512e2f04487cca15d6699055f74a51de1a9eb4
-f
-6src/main/java/resources/configs/util/WorldCreator.java,f\0\f07c2f28eb718972f48f149a6bc506e981277ead
 Q
 !src/main/java/world/Organism.java,c\6\c6d74f09a6f8630bdd1500a4dc66b3870e208341
 W
@@ -172,7 +160,9 @@ X
 (src/main/java/services/OrganismTask.java,5\4\54b9449fb1d1254dd60951a474cac4df88cd1edd
 W
 'src/main/java/services/GameStarter.java,c\6\c667bf1323baabf2e421aa3da53a81039568f8f5
-c
-3src/main/java/resources/configs/util/mapViewer.java,8\0\80f85ce2d002d48fb4065674eec0224a526a91a3
-c
-3src/main/java/resources/configs/util/MapViewer.java,0\5\05176404bf22c96538e8d8a26d5c2e1d20b3e141
+T
+$src/main/java/util/WorldCreator.java,4\4\4407b6df11a257e38288ab3b748257ac3e5e3d87
+Q
+!src/main/java/util/MapViewer.java,f\c\fc60dd8c11f7849811257a3677b96c598d37899e
+R
+"src/main/java/util/Randomizer.java,d\0\d097b5320885e24274c0ebab844dcb443ebc7960

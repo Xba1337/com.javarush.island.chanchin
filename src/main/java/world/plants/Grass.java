@@ -1,15 +1,16 @@
 package world.plants;
 
 
-import resources.configs.util.Randomizer;
+import lombok.ToString;
+import util.Randomizer;
 import world.Organism;
 import world.constants.Constants;
 import world.map.Cell;
 
-import java.util.Map;
 import java.util.Set;
 
-public class Grass extends Organism{
+@ToString
+public class Grass extends Organism {
 
     private final double weight;
 
@@ -23,28 +24,33 @@ public class Grass extends Organism{
     public void multiply(Cell cell) {
         Grass grass = this;
         currentHeight = currentHeight + 10;
-        if (currentHeight >= 100){
-            if(checkNumberOfPlants(grass, cell)){
+        if (currentHeight >= 100) {
+            if (checkNumberOfPlants(grass, cell)) {
                 currentHeight = 1;
                 Grass plant = new Grass();
                 cell.getContainedPlants()
-                    .put(Grass.class, plant);
+                    .add(plant);
             }
         }
     }
 
-    public boolean checkNumberOfPlants(Grass grass, Cell cell){
-        Set<Map.Entry<Class<? extends Grass>, Grass>> mapOfPlants = cell.getContainedPlants()
-                                                                        .entrySet();
-
+    public boolean checkNumberOfPlants(Grass grass, Cell cell) {
+        cell.getLock()
+            .lock();
+        Set<Grass> setOfPlants = cell.getContainedPlants();
         int plantCounter = 0;
-        for (Map.Entry<Class<? extends Grass>, Grass> animalEntry :
-                mapOfPlants) {
-            if (animalEntry.getKey() == grass.getClass()) {
-                plantCounter++;
-            }
-        }
+        try {
 
+            for (Grass plants :
+                    setOfPlants) {
+                if (plants.getClass() == grass.getClass()) {
+                    plantCounter++;
+                }
+            }
+        } finally {
+            cell.getLock()
+                .unlock();
+        }
         return plantCounter < Constants.BASE_FOR_PLANTS.get(grass.getClass())[1];
     }
 

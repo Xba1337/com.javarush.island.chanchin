@@ -1,75 +1,75 @@
 
 u
-java:S1104"XMake WORLD_SIZE_X a static final constant or non-public and provide accessors if needed.(‚°Ù°8“éÑç1
-u
-java:S1104"XMake WORLD_SIZE_Y a static final constant or non-public and provide accessors if needed.(üÇ¦Ş8“éÑç1
-€
-java:S1104"cMake MAX_STEPS_OF_SIMULATION a static final constant or non-public and provide accessors if needed.(çüîğ8¢”Ñç1
+java:S1104"XMake WORLD_SIZE_Y a static final constant or non-public and provide accessors if needed.(ßÜÉ„8“éÑç1
+z
+java:S1104"XMake WORLD_SIZE_X a static final constant or non-public and provide accessors if needed.(²¼™Õúÿÿÿÿ8“éÑç1
+…
+java:S1104"cMake MAX_STEPS_OF_SIMULATION a static final constant or non-public and provide accessors if needed.(˜ŸÎıúÿÿÿÿ8¢”Ñç1
+n
+java:S1104"QMake DELAY a static final constant or non-public and provide accessors if needed.(™±†å8Õİ¼Õç1
 s
-java:S1104"QMake DELAY a static final constant or non-public and provide accessors if needed.(ÄÙáüıÿÿÿÿ8Õİ¼Õç1
-x
-java:S1104"VMake INIT_DELAY a static final constant or non-public and provide accessors if needed.(…¶œ¨üÿÿÿÿ8±¤¾Õç1
+java:S1104"VMake INIT_DELAY a static final constant or non-public and provide accessors if needed.(’»€ÿ8±¤¾Õç1
 O
-java:S1444"2Make this "public static WORLD_SIZE_X" field final(‚°Ù°8“éÑç1
-O
-java:S1444"2Make this "public static WORLD_SIZE_Y" field final(üÇ¦Ş8“éÑç1
-Z
-java:S1444"=Make this "public static MAX_STEPS_OF_SIMULATION" field final(çüîğ8£”Ñç1
+java:S1444"2Make this "public static WORLD_SIZE_Y" field final(ßÜÉ„8“éÑç1
+T
+java:S1444"2Make this "public static WORLD_SIZE_X" field final(²¼™Õúÿÿÿÿ8“éÑç1
+_
+java:S1444"=Make this "public static MAX_STEPS_OF_SIMULATION" field final(˜ŸÎıúÿÿÿÿ8£”Ñç1
+H
+java:S1444"+Make this "public static DELAY" field final(™±†å8Õİ¼Õç1
 M
-java:S1444"+Make this "public static DELAY" field final(ÄÙáüıÿÿÿÿ8Õİ¼Õç1
-R
-java:S1444"0Make this "public static INIT_DELAY" field final(…¶œ¨üÿÿÿÿ8²¤¾Õç1
+java:S1444"0Make this "public static INIT_DELAY" field final(’»€ÿ8²¤¾Õç1
 t
-java:S3008"WRename this field "WORLD_SIZE_X" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚°Ù°8™éÑç1
-t
-java:S3008"WRename this field "WORLD_SIZE_Y" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üÇ¦Ş8™éÑç1
-
-java:S3008"bRename this field "MAX_STEPS_OF_SIMULATION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çüîğ8¨”Ñç1
+java:S3008"WRename this field "WORLD_SIZE_Y" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßÜÉ„8™éÑç1
+y
+java:S3008"WRename this field "WORLD_SIZE_X" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²¼™Õúÿÿÿÿ8™éÑç1
+„
+java:S3008"bRename this field "MAX_STEPS_OF_SIMULATION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ŸÎıúÿÿÿÿ8¨”Ñç1
+m
+java:S3008"PRename this field "DELAY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™±†å8Úİ¼Õç1
 r
-java:S3008"PRename this field "DELAY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÙáüıÿÿÿÿ8Úİ¼Õç1
-w
-java:S3008"URename this field "INIT_DELAY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…¶œ¨üÿÿÿÿ8·¤¾Õç1
+java:S3008"URename this field "INIT_DELAY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’»€ÿ8·¤¾Õç1
 \
 java:S1118":Add a private constructor to hide the implicit public one.(“³±ûÿÿÿÿ8œéÑç1
 K
-java:S2386C".Make member "STRINGS_FOR_ANIMALS" "protected".(Ó€Ì8ŸéÑç1
+java:S2386C".Make member "STRINGS_FOR_ANIMALS" "protected".(Ó€Ì8‡‘³¯è1
 O
-java:S2386U"-Make member "STRINGS_FOR_PLANTS" "protected".(‰ÌÑùÿÿÿÿ8¡éÑç1
+java:S2386U"-Make member "STRINGS_FOR_PLANTS" "protected".(‰ÌÑùÿÿÿÿ8‹‘³¯è1
 H
-java:S2386\"+Make member "BASE_FOR_ANIMALS" "protected".(ˆŠÏ¤8¢éÑç1
+java:S2386\"+Make member "BASE_FOR_ANIMALS" "protected".(ˆŠÏ¤8Œ‘³¯è1
 L
-java:S2386m"*Make member "BASE_FOR_PLANTS" "protected".(éõ’ÿÿÿÿÿ8¤éÑç1
+java:S2386n"*Make member "BASE_FOR_PLANTS" "protected".(éõ’ÿÿÿÿÿ8‘³¯è1
 <
-java:S2386r" Make member "TYPES" "protected".(ƒö€C8¤éÑç1
+java:S2386s" Make member "TYPES" "protected".(ƒö€C8‘³¯è1
 Q
-java:S2386‡".Make member "WOLF_CHANCES_TO_EAT" "protected".(á ÕÚùÿÿÿÿ8ø¥Öç1
+java:S2386ˆ".Make member "WOLF_CHANCES_TO_EAT" "protected".(á ÕÚùÿÿÿÿ8ø¥Öç1
 R
-java:S2386›"/Make member "SNAKE_CHANCES_TO_EAT" "protected".(˜‘•íûÿÿÿÿ8ú¥Öç1
+java:S2386œ"/Make member "SNAKE_CHANCES_TO_EAT" "protected".(˜‘•íûÿÿÿÿ8ú¥Öç1
 P
-java:S2386¯"-Make member "FOX_CHANCES_TO_EAT" "protected".(ıôˆßüÿÿÿÿ8ü¥Öç1
+java:S2386°"-Make member "FOX_CHANCES_TO_EAT" "protected".(ıôˆßüÿÿÿÿ8ü¥Öç1
 L
-java:S2386Ã".Make member "BEAR_CHANCES_TO_EAT" "protected".(•°èó8ı¥Öç1
+java:S2386Ä".Make member "BEAR_CHANCES_TO_EAT" "protected".(•°èó8ı¥Öç1
 M
-java:S2386×"/Make member "EAGLE_CHANCES_TO_EAT" "protected".(ãŞ¼û8ÿ¥Öç1
+java:S2386Ø"/Make member "EAGLE_CHANCES_TO_EAT" "protected".(ãŞ¼û8ÿ¥Öç1
 R
-java:S2386ë"/Make member "HORSE_CHANCES_TO_EAT" "protected".(Ó‘á×ıÿÿÿÿ8€¦Öç1
+java:S2386ì"/Make member "HORSE_CHANCES_TO_EAT" "protected".(Ó‘á×ıÿÿÿÿ8€¦Öç1
 L
-java:S2386ÿ".Make member "DEER_CHANCES_TO_EAT" "protected".(ãë½˜8‚¦Öç1
+java:S2386€".Make member "DEER_CHANCES_TO_EAT" "protected".(ãë½˜8‚¦Öç1
 K
-java:S2386“".Make member "HARE_CHANCES_TO_EAT" "protected".(ôş—8„¦Öç1
+java:S2386”".Make member "HARE_CHANCES_TO_EAT" "protected".(ôş—8„¦Öç1
 R
-java:S2386§"/Make member "MOUSE_CHANCES_TO_EAT" "protected".(«­•”ıÿÿÿÿ8†¦Öç1
+java:S2386¨"/Make member "MOUSE_CHANCES_TO_EAT" "protected".(«­•”ıÿÿÿÿ8†¦Öç1
 Q
-java:S2386»".Make member "GOAT_CHANCES_TO_EAT" "protected".(¯şÑ±üÿÿÿÿ8‡¦Öç1
+java:S2386¼".Make member "GOAT_CHANCES_TO_EAT" "protected".(¯şÑ±üÿÿÿÿ8‡¦Öç1
 M
-java:S2386Ï"/Make member "SHEEP_CHANCES_TO_EAT" "protected".(¶àèÕ8ˆ¦Öç1
+java:S2386Ğ"/Make member "SHEEP_CHANCES_TO_EAT" "protected".(¶àèÕ8ˆ¦Öç1
 Q
-java:S2386ã".Make member "BOAR_CHANCES_TO_EAT" "protected".(­÷è™øÿÿÿÿ8‰¦Öç1
+java:S2386ä".Make member "BOAR_CHANCES_TO_EAT" "protected".(­÷è™øÿÿÿÿ8‰¦Öç1
 Q
-java:S2386÷".Make member "BULL_CHANCES_TO_EAT" "protected".(¸åÍüÿÿÿÿ8‹¦Öç1
+java:S2386ø".Make member "BULL_CHANCES_TO_EAT" "protected".(¸åÍüÿÿÿÿ8‹¦Öç1
 L
-java:S2386‹".Make member "DUCK_CHANCES_TO_EAT" "protected".(·ï´ú8¦Öç1
+java:S2386Œ".Make member "DUCK_CHANCES_TO_EAT" "protected".(·ï´ú8¦Öç1
 S
-java:S2386Ÿ"5Make member "CATERPILLAR_CHANCES_TO_EAT" "protected".(ûå½”8¦Öç1
+java:S2386 "5Make member "CATERPILLAR_CHANCES_TO_EAT" "protected".(ûå½”8¦Öç1
 M
-java:S2386³"/Make member "CONTAINER_OF_CHANCES" "protected".(½—Ş8¦Öç1
+java:S2386´"/Make member "CONTAINER_OF_CHANCES" "protected".(½—Ş8®‘³¯è1

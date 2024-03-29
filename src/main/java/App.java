@@ -1,4 +1,4 @@
-import resources.configs.util.WorldCreator;
+import util.WorldCreator;
 import services.GameStarter;
 import world.constants.Constants;
 

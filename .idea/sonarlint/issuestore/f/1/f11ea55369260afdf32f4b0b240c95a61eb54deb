@@ -1,7 +1,11 @@
 
 Q
-java:S1066X"/Merge this if statement with the enclosing one.(¼«¦ÿÿÿÿÿ8Ğš†Îç1
+java:S1066V"/Merge this if statement with the enclosing one.(¼«¦ÿÿÿÿÿ8ø²ĞÓè1
+L
+java:S1066W"/Merge this if statement with the enclosing one.(ÙÕ¼À8ø²ĞÓè1
+T
+java:S2589+"7Remove this expression which always evaluates to "true"(ÔÄĞ÷8€ÑÖè1
 N
-java:S2387","animal" is the name of a field in "Animal".(øŸÏƒüÿÿÿÿ8Úš†Îç1
+java:S2387","animal" is the name of a field in "Animal".(øŸÏƒüÿÿÿÿ8°³ĞÓè1
 B
-java:S2157"%Add a "clone()" method to this class.(¨÷•ÿ8Úš†Îç1
+java:S2157"%Add a "clone()" method to this class.(¨÷•ÿ8°³ĞÓè1

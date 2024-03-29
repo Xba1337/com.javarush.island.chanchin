@@ -2,7 +2,7 @@ package world.animals;
 
 
 import lombok.SneakyThrows;
-import resources.configs.util.Randomizer;
+import util.Randomizer;
 import world.Organism;
 import world.animals.herbivorous.Caterpillar;
 import world.constants.Constants;
@@ -16,12 +16,13 @@ import java.util.Set;
 
 public class Predator extends Animal implements Cloneable {
 
-    private double currentStomachVolume;
+
     protected Class<? extends Predator> animal;
 
     public Predator() {
+        super();
         this.animal = getClass();
-        this.currentStomachVolume = Constants.BASE_FOR_ANIMALS.get(animal)[3];
+
     }
 
     @Override
@@ -34,22 +35,21 @@ public class Predator extends Animal implements Cloneable {
         boolean isAte = false;
 
         try {
-            Iterator<Map.Entry<Class<? extends Animal>, Animal>> victimIterator = cell.getContainedAnimals()
-                                                                                      .entrySet()
-                                                                                      .iterator();
+            Iterator<Animal> victimIterator = cell.getContainedAnimals()
+                                                  .iterator();
 
             while (victimIterator.hasNext() && ! isAte) {
-                Map.Entry<Class<? extends Animal>, Animal> victim = victimIterator.next();
-                if (victim.getValue() instanceof Herbivorous && ! (victim.getValue() instanceof Caterpillar) && victim.getValue() != null) {
-                    Herbivorous herbivorous = (Herbivorous) victim.getValue();
+                Animal victim = victimIterator.next();
+                if (victim instanceof Herbivorous && ! (victim instanceof Caterpillar) && victim != null) {
+                    Herbivorous herbivorous = (Herbivorous) victim;
                     Map<Class<? extends Organism>, Integer> mapOfChances = Constants.CONTAINER_OF_CHANCES.get(predator.getClass());
                     int chancesToEat = mapOfChances.get(herbivorous.getClass());
                     if (Randomizer.getRandom(chancesToEat)) {
-                        double additionalWeight = Constants.BASE_FOR_ANIMALS.get(victim.getKey())[0];
-                        if ((predator.getCurrentStomachVolume() + additionalWeight) > Constants.BASE_FOR_ANIMALS.get(predator.getClass())[3]) {
-                            predator.setCurrentStomachVolume(Constants.BASE_FOR_ANIMALS.get(predator.getClass())[3]);
+                        double additionalWeight = Constants.BASE_FOR_ANIMALS.get(victim.getClass())[0];
+                        if ((currentStomachVolume + additionalWeight) > Constants.BASE_FOR_ANIMALS.get(predator.getClass())[3]) {
+                            currentStomachVolume = Constants.BASE_FOR_ANIMALS.get(predator.getClass())[3];
                         } else {
-                            predator.setCurrentStomachVolume(predator.getCurrentStomachVolume() + additionalWeight);
+                            currentStomachVolume = currentStomachVolume + additionalWeight;
                         }
                         victimIterator.remove();
                         isAte = true;
@@ -76,22 +76,22 @@ public class Predator extends Animal implements Cloneable {
         Animal predator = this;
 
         try {
-            Iterator<Map.Entry<Class<? extends Animal>, Animal>> coupleFinder = cell.getContainedAnimals()
-                                                                                    .entrySet()
-                                                                                    .iterator();
+            Iterator<Animal> coupleFinder = cell.getContainedAnimals()
+                                                .iterator();
 
             boolean isMultiplied = false;
             while (coupleFinder.hasNext() && ! isMultiplied) {
-                Map.Entry<Class<? extends Animal>, Animal> couple = coupleFinder.next();
-                if (couple.getKey() == predator.getClass() && ! couple.getValue()
-                                                                      .equals(predator)) {
+                Animal couple = coupleFinder.next();
+                if (couple.getClass() == predator.getClass() && ! couple.equals(predator)) {
                     if (checkNumberOfAnimals(predator, cell)) {
-                        Constructor<? extends Animal> animalConstructor = predator.getClass()
-                                                                                  .getDeclaredConstructor();
-                        Animal newAnimal = animalConstructor.newInstance();
-                        cell.getContainedAnimals()
-                            .put(predator.getClass(), newAnimal);
-                        isMultiplied = true;
+                        if (Randomizer.getRandom()) {
+                            Constructor<? extends Animal> animalConstructor = predator.getClass()
+                                                                                      .getDeclaredConstructor();
+                            Animal newAnimal = animalConstructor.newInstance();
+                            cell.getContainedAnimals()
+                                .add(newAnimal);
+                            isMultiplied = true;
+                        }
                     }
                 }
             }
@@ -136,9 +136,9 @@ public class Predator extends Animal implements Cloneable {
             if (checkTheWay(predator, WorldMap.getCell(posX, posY))) {
                 WorldMap.getCell(posX, posY).
                         getContainedAnimals().
-                        put(predator.getClass(), predator.clone());
+                        add(predator.clone());
                 die(predator, cell);
-            } else move(cell);
+            }
         } finally {
             cell.getLock()
                 .unlock();
@@ -154,9 +154,10 @@ public class Predator extends Animal implements Cloneable {
 
         boolean dead = false;
 
+
         try {
-            currentStomachVolume = currentStomachVolume - Constants.BASE_FOR_ANIMALS.get(predator.getClass())[3];
-            if (predator.getCurrentStomachVolume() <= 0) {
+            currentStomachVolume = currentStomachVolume - Constants.BASE_FOR_ANIMALS.get(predator.getClass())[3] / 20;
+            if (currentStomachVolume <= 0) {
                 die(predator, cell);
                 dead = true;
             }
@@ -172,18 +173,15 @@ public class Predator extends Animal implements Cloneable {
             .lock();
 
         try {
-            Iterator<Map.Entry<Class<? extends Animal>, Animal>> animalsFromCell = cell.getContainedAnimals()
-                                                                                       .entrySet()
-                                                                                       .iterator();
+            Iterator<Animal> animalsFromCell = cell.getContainedAnimals()
+                                                   .iterator();
             boolean success = false;
-            if (animal.getCurrentStomachVolume() <= 0) {
-                while (animalsFromCell.hasNext() && ! success) {
-                    Animal removable = animalsFromCell.next()
-                                                      .getValue();
-                    if (removable.equals(animal)) {
-                        animalsFromCell.remove();
-                        success = true;
-                    }
+
+            while (animalsFromCell.hasNext() && ! success) {
+                Animal remove = animalsFromCell.next();
+                if (remove.equals(animal)) {
+                    animalsFromCell.remove();
+                    success = true;
                 }
             }
         } finally {
@@ -192,10 +190,6 @@ public class Predator extends Animal implements Cloneable {
         }
     }
 
-    @Override
-    public double getCurrentStomachVolume() {
-        return currentStomachVolume;
-    }
 
     public boolean checkTheWay(Animal animal, Cell cell) {
         cell.getLock()
@@ -204,20 +198,22 @@ public class Predator extends Animal implements Cloneable {
         int animalCounter = 0;
 
         try {
-            Map<Class<? extends Animal>, Animal> listInNewPosition = cell.getContainedAnimals();
-            Set<Map.Entry<Class<? extends Animal>, Animal>> animalsInNewCell = listInNewPosition.entrySet();
+            Iterator<Animal> listInNewPosition = cell.getContainedAnimals()
+                                                     .iterator();
 
-            for (Map.Entry<Class<? extends Animal>, Animal> animalInNewCell :
-                    animalsInNewCell) {
-                if (animalInNewCell.getKey() == animal.getClass()) {
+            while (listInNewPosition.hasNext()) {
+                Animal movingAnimal = listInNewPosition.next();
+                if (movingAnimal.getClass() == animal.getClass()) {
                     animalCounter++;
                 }
             }
+            return animalCounter < Constants.BASE_FOR_ANIMALS.get(animal.getClass())[1];
         } finally {
             cell.getLock()
                 .unlock();
         }
-        return animalCounter < Constants.BASE_FOR_ANIMALS.get(animal.getClass())[1];
+
+
     }
 
     public boolean checkNumberOfAnimals(Animal animal, Cell cell) {
@@ -227,16 +223,14 @@ public class Predator extends Animal implements Cloneable {
         int animalCounter = 0;
 
         try {
-            Set<Map.Entry<Class<? extends Animal>, Animal>> mapOfAnimals = cell.getContainedAnimals().
-                                                                               entrySet();
+            Set<Animal> setOfAnimals = cell.getContainedAnimals();
 
-            for (Map.Entry<Class<? extends Animal>, Animal> animalEntry :
-                    mapOfAnimals) {
-                if (animalEntry.getKey() == animal.getClass()) {
+            for (Animal animals :
+                    setOfAnimals) {
+                if (animals.getClass() == animal.getClass()) {
                     animalCounter++;
                 }
             }
-
         } finally {
             cell.getLock()
                 .unlock();

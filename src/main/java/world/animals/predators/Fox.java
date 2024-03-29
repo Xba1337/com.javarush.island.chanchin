@@ -1,7 +1,7 @@
 package world.animals.predators;
 
 
-import resources.configs.util.Randomizer;
+import util.Randomizer;
 import world.Organism;
 import world.animals.Animal;
 import world.animals.Herbivorous;
@@ -16,6 +16,7 @@ import java.util.Map;
 public class Fox extends Predator {
 
     public Fox() {
+        super();
         this.animal = Fox.class;
     }
 
@@ -29,36 +30,30 @@ public class Fox extends Predator {
         boolean isAte = false;
 
         try {
-            Iterator<Map.Entry<Class<? extends Animal>, Animal>> victimIterator = cell.getContainedAnimals()
-                                                                                      .entrySet()
-                                                                                      .iterator();
-
+            Iterator<Animal> victimIterator = cell.getContainedAnimals()
+                                                  .iterator();
             while (victimIterator.hasNext() && ! isAte) {
-                Map.Entry<Class<? extends Animal>, Animal> victim = victimIterator.next();
-                if (victim.getValue() instanceof Herbivorous && victim.getValue() != null) {
-                    Herbivorous herbivorous = (Herbivorous) victim.getValue();
+                Animal victim = victimIterator.next();
+                if (victim instanceof Herbivorous && victim != null) {
+                    Herbivorous herbivorous = (Herbivorous) victim;
                     Map<Class<? extends Organism>, Integer> mapOfChances = Constants.CONTAINER_OF_CHANCES.get(predator.getClass());
                     int chancesToEat = mapOfChances.get(herbivorous.getClass());
                     if (Randomizer.getRandom(chancesToEat)) {
-                        double additionalWeight = Constants.BASE_FOR_ANIMALS.get(victim.getKey())[0];
-                        if ((predator.getCurrentStomachVolume() + additionalWeight) > Constants.BASE_FOR_ANIMALS.get(predator.getClass())[3]) {
-                            predator.setCurrentStomachVolume(Constants.BASE_FOR_ANIMALS.get(predator.getClass())[3]);
+                        double additionalWeight = Constants.BASE_FOR_ANIMALS.get(victim.getClass())[0];
+                        if ((currentStomachVolume + additionalWeight) > Constants.BASE_FOR_ANIMALS.get(predator.getClass())[3]) {
+                            currentStomachVolume = Constants.BASE_FOR_ANIMALS.get(predator.getClass())[3];
                         } else {
-                            predator.setCurrentStomachVolume(predator.getCurrentStomachVolume() + additionalWeight);
+                            currentStomachVolume = currentStomachVolume + additionalWeight;
                         }
                         victimIterator.remove();
                         isAte = true;
                     }
-
                 }
-
             }
-
         } finally {
             cell.getLock()
                 .unlock();
         }
         return isAte;
-
     }
 }

@@ -1,5 +1,6 @@
-package resources.configs.util;
+package util;
 
+import lombok.Getter;
 import lombok.SneakyThrows;
 import world.animals.Animal;
 import world.constants.Constants;
@@ -8,12 +9,14 @@ import world.map.WorldMap;
 import world.plants.Grass;
 
 import java.lang.reflect.Constructor;
-
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class WorldCreator {
-
+    @Getter
     private int worldSizeX;
+    @Getter
     private int worldSizeY;
 
     public final WorldMap worldMap;
@@ -25,61 +28,53 @@ public class WorldCreator {
         generateCells();
     }
 
-    public void generateCells() {
+    private void generateCells() {
         Cell[][] cells = worldMap.getCells();
-        for (int y = 0; y < Constants.WORLD_SIZE_Y; y++) {
-            for (int x = 0; x < Constants.WORLD_SIZE_X; x++) {
-                cells[x][y] = new Cell(x, y);
+        for (int x = 0; x < Constants.WORLD_SIZE_X; x++) {
+            for (int y = 0; y < Constants.WORLD_SIZE_Y; y++) {
+                cells[x][y] = new Cell(y, x);
             }
         }
         containCells(cells);
-
     }
 
-    public void containCells(Cell[][] cells) {
+    private void containCells(Cell[][] cells) {
         for (int y = 0; y < cells.length; y++) {
             for (int x = 0; x < cells[y].length; x++) {
                 for (Class<? extends Animal> type :
                         Constants.TYPES) {
-                    cells[x][y].getContainedAnimals()
-                               .put(type, generateOrganisms(type));
-                    cells[x][y].getContainedPlants()
-                               .put(Grass.class, generatePlant());
+                    cells[y][x].getContainedAnimals()
+                               .addAll(generateOrganisms(type));
+                    cells[y][x].getContainedPlants()
+                               .addAll(generatePlant());
                 }
-
             }
         }
     }
 
     @SneakyThrows
-    private Animal generateOrganisms(Class<? extends Animal> type) {
+    private Set<Animal> generateOrganisms(Class<? extends Animal> type) {
+        Set<Animal> animalSet = new HashSet<>();
         Animal animal = null;
 
         int randomNumOfAnimals = Randomizer.getRandom(0, (int) Constants.BASE_FOR_ANIMALS.get(type)[1]);
         for (int i = 0; i < randomNumOfAnimals; i++) {
-
             Constructor<? extends Animal> animalConstructor = type.getDeclaredConstructor();
             animal = animalConstructor.newInstance();
-
+            animalSet.add(animal);
         }
-
-        return animal;
+        return animalSet;
     }
 
-    private Grass generatePlant() {
+    private Set<Grass> generatePlant() {
+        Set<Grass> plantSet = new HashSet<>();
         Grass plant = null;
-        int randomNumberOfAnimals = Randomizer.getRandom(0, (int) Constants.BASE_FOR_PLANTS.get(Grass.class)[1]);
-        for (int i = 0; i < randomNumberOfAnimals; i++) {
+
+        int randomNumberOfPlants = Randomizer.getRandom(0, (int) Constants.BASE_FOR_PLANTS.get(Grass.class)[1]);
+        for (int i = 0; i < randomNumberOfPlants; i++) {
             plant = new Grass();
+            plantSet.add(plant);
         }
-        return plant;
-    }
-
-    public int getWorldSizeX() {
-        return worldSizeX;
-    }
-
-    public int getWorldSizeY() {
-        return worldSizeY;
+        return plantSet;
     }
 }
